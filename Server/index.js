@@ -2,6 +2,7 @@
 const cors = require('cors');
 const express = require('express');
 const { PORT, connection } = require('./config/db');
+const { userRouter } = require('./routes/user.routes');
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.status(200).send('<h1>Welcome to the BuyCars Corp. API !!!</h1>');
 });
+app.use('/users', userRouter);
 
 // Listening to the server
 app.listen(PORT, connection);
