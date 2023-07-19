@@ -1,7 +1,7 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 const secretKey1 = process.env.secretKey1;
 const secretKey2 = process.env.secretKey2;
 
